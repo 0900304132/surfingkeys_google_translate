@@ -1,0 +1,2 @@
+# surfingkeys_google_translate
+surfingkeys插件 使用的谷歌翻译
