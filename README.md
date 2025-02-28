@@ -10,7 +10,7 @@
 
 ``` javascript
 // 自定义词典
-Front.registerInlineQuery({
+api.Front.registerInlineQuery({
     url: function(q) {
         return `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=zh-CN&dt=t&dt=bd&dj=1&source=bubble&q=${q}`
     },
@@ -26,7 +26,11 @@ Front.registerInlineQuery({
             })
             return con.outerHTML
         } else {
-            return false
+            let con = document.createElement('div')
+            con.style = "padding:0 15px;font-size:20px;line-height:1.2;min-height:300px;overflow:auto;"
+            con.innerHTML = '<p>Google 翻译</p>'
+            con.innerHTML += `<p>暂无返回<p>`
+            return con.outerHTML
         }
     }
 });
